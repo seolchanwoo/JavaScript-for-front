@@ -65,6 +65,72 @@ console.log(player.points);
 //함수에 인자값을 보내 어떻게 전달하는지
 //함수가 왜 필요한가
 //장점이 뭔가
-function sayHello() {
 
+//함수를 쓰지 않았을때
+const addResult = 5 + 10;
+
+console.log(addResult);
+
+const addResult1 = 10 + 1;
+console.log(addResult1);
+
+//함수 사용시
+function addNumbers(a, b) {
+return a + b;
+}
+console.log(addNumbers(5, 10));  // 15
+console.log(addNumbers(20, 30)); // 50
+
+//return을 사용 안할 시
+//함수의 내부에서 console.log 사용
+function addNumbers(a, b) {
+  const result = a + b;
+  console.log(result);
+}
+
+console.log(addNumbers(5, 10));  // 15
+console.log(addNumbers(20, 30)); // 50
+
+//if else
+// const age = prompt("How old are you?");
+//반응형 컴포넌트를 만드는 이유
+//사용자에게 맞게 커스텀으로 재사용 하기 위해
+// console.log(age);
+// console.log(typeof (age));
+//value해당 값을 확인 할려면 typeof()
+//타입 변경하는 방법
+//문자열을 number로 바꾸는 방법
+//사용이유
+//유저가 입력한 값이 정수형인지 아닌지 판별
+//아닐 시 사용자가 인지를 할 수 있도록 확인해줄 수 있다
+//if문의 동작방식
+
+//else if 좀 더 세부적으로 조건을 나누기 위해 사용
+const age = parseInt(prompt("How old are you?"));
+// console.log(typeof age);
+console.log(isNaN(age));
+
+//Number 타입이 아니거나 age가 음수이면
+if (isNaN(age) || age < 0) {
+  console.log("please write a real positive number");
+}
+else if (age < 18) {
+  console.log("You are too young");
+}
+  
+else if (age >= 18 && age <= 50) {
+  console.log("You can drinkt");
+}
+else if (age > 50 && age <= 80) {
+  console.log("You should exercise");
+}
+else if (age > 80) {
+  console.log("You can do whatever you want");
+}
+  
+else if (age === 100) {
+  console.log("wow you are wise");
+  }
+else {
+  console.log("Please writea number");
 }
